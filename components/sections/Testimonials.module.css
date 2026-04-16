@@ -1,0 +1,78 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  padding: 32px;
+  cursor: default;
+  position: relative;
+}
+
+/* Glowing top border line */
+.topLine {
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(41,151,255,0.5), rgba(191,90,242,0.5), transparent);
+  border-radius: 100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .topLine { opacity: 1; }
+
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 18px;
+}
+
+.quote {
+  font-size: 14px;
+  font-weight: 300;
+  color: #a1a1a6;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  font-style: normal;
+  quotes: none;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f5f5f7;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  font-size: 12px;
+  color: #6e6e73;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
